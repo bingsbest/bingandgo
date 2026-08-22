@@ -183,3 +183,88 @@ button{font:inherit}
   .border-card{height:265px}
   .footer{padding:15px 5vw;flex-wrap:wrap;gap:8px}.footer-copy{width:100%}.footer-social{margin-left:0}
 }
+
+/* ===== Across Borders detail pages ===== */
+.detail-page{background:var(--navy)}
+.detail-page .site-header{position:absolute}
+.detail-hero{
+  min-height:540px;position:relative;overflow:hidden;
+  display:flex;align-items:flex-end;padding:120px 7vw 75px;
+  background-color:#03111f;background-position:center;background-size:cover;background-repeat:no-repeat;
+}
+.detail-hero.china-americas{background-image:url("china-card.jpg")}
+.detail-hero.americas-china{background-image:url("america-card.jpg")}
+.detail-hero:before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(0,8,16,.90) 0%,rgba(0,8,16,.70) 45%,rgba(0,8,16,.26) 100%),
+             linear-gradient(0deg,rgba(0,8,16,.75),rgba(0,8,16,.05) 55%);
+}
+.detail-hero-inner{position:relative;z-index:2;max-width:760px}
+.detail-hero .breadcrumb{
+  font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:18px
+}
+.detail-hero h1{
+  font:500 clamp(55px,7vw,92px)/.88 var(--serif);letter-spacing:-.045em;margin:0 0 20px
+}
+.detail-hero p{max-width:690px;color:#d4dcdf;font-size:16px;line-height:1.75;margin:0 0 25px}
+.detail-hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+
+.detail-section{padding:78px 7vw;background:linear-gradient(180deg,#031725,#03111f)}
+.detail-inner{max-width:1180px;margin:auto}
+.detail-intro{display:grid;grid-template-columns:.82fr 1.18fr;gap:80px;align-items:start}
+.detail-intro h2,.process-section h2,.model-section h2,.detail-cta h2{
+  font:500 clamp(40px,5vw,62px)/1 var(--serif);letter-spacing:-.035em;margin:14px 0 0
+}
+.detail-intro-copy{color:#bec7cb;font-size:14px;line-height:1.82}
+.detail-intro-copy p{margin:0 0 18px}
+
+.scenario-section{padding:72px 7vw;background:#061a2b}
+.scenario-grid{
+  max-width:1180px;margin:32px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px
+}
+.scenario-card{
+  min-height:270px;padding:28px;border:1px solid rgba(224,170,77,.20);
+  background:linear-gradient(145deg,rgba(255,255,255,.035),rgba(255,255,255,.01));
+}
+.scenario-num{font-size:9px;color:var(--gold);letter-spacing:.16em;margin-bottom:32px}
+.scenario-card h3{font:500 27px/1.05 var(--serif);margin:0 0 13px}
+.scenario-card p{font-size:12px;line-height:1.7;color:#b7c1c5;margin:0}
+.scenario-card:hover{border-color:rgba(224,170,77,.55);transform:translateY(-3px);transition:.2s}
+
+.process-section{padding:78px 7vw;background:linear-gradient(180deg,#03111f,#041827)}
+.process-grid{max-width:1180px;margin:38px auto 0;display:grid;grid-template-columns:repeat(4,1fr)}
+.process-step{padding:0 26px;border-right:1px solid rgba(255,255,255,.13)}
+.process-step:first-child{padding-left:0}.process-step:last-child{border-right:0}
+.process-step small{color:var(--gold);font-size:9px;letter-spacing:.16em}
+.process-step h3{font:500 23px/1.1 var(--serif);margin:10px 0 10px}
+.process-step p{font-size:11px;color:#aeb9bd;line-height:1.65;margin:0}
+
+.model-section{padding:78px 7vw;background:#03111f}
+.model-grid{max-width:1180px;margin:36px auto 0;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.model-card{padding:24px;border-top:1px solid var(--gold);background:rgba(255,255,255,.025)}
+.model-card strong{display:block;font-size:12px;text-transform:uppercase;margin-bottom:8px}
+.model-card span{font-size:11px;line-height:1.6;color:#9facb1}
+
+.detail-cta{
+  padding:72px 20px;text-align:center;background:linear-gradient(180deg,#041a2a,#020c16)
+}
+.detail-cta h2{margin:10px auto 12px;max-width:850px}
+.detail-cta p{color:#aeb9bd;font-size:13px;margin:0 auto 24px;max-width:620px}
+.back-link{display:inline-block;margin-top:20px;color:var(--gold);font-size:9px;text-transform:uppercase;letter-spacing:.13em}
+
+@media(max-width:900px){
+  .detail-intro{grid-template-columns:1fr;gap:30px}
+  .scenario-grid{grid-template-columns:1fr 1fr}
+  .process-grid,.model-grid{grid-template-columns:1fr 1fr;gap:25px 0}
+  .process-step:nth-child(2){border-right:0}
+}
+@media(max-width:720px){
+  .detail-hero{min-height:590px;padding:105px 7vw 60px}
+  .detail-hero h1{font-size:54px}
+  .detail-hero p{font-size:14px}
+  .scenario-grid,.process-grid,.model-grid{grid-template-columns:1fr}
+  .scenario-card{min-height:0}
+  .process-step{padding:18px 0;border-right:0;border-bottom:1px solid rgba(255,255,255,.13)}
+  .process-step:last-child{border-bottom:0}
+  .model-card{padding:20px}
+}
