@@ -1,2 +1,0 @@
-# bingandgo
-Bing&amp;Go
